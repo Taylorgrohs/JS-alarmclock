@@ -1,15 +1,6 @@
-var datetime = null,
-        date = null;
-
-var update = function () {
-    date = moment(new Date());
-    datetime.html(date.format('dddd, MMMM Do YYYY, h:mm:ss a'));
+exports.update = function () {
+  var dateTime = null;
+  var date = moment(new Date());
+  dateTime = $('#currentTime').html(date.format('dddd, MMMM Do YYYY, h:mm:ss a'));
+  return dateTime;
 };
-
-$(document).ready(function() {
-
-  $('#currentTime').text(moment().format('MMMM Do YYYY, h:mm:ss a'));
-  datetime = $('#currentTime');
-    update();
-    setInterval(update, 1000);
-});
