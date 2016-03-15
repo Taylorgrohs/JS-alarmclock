@@ -13,9 +13,9 @@ var lib = require('bower-files')({
   'overrides': {
     'bootstrap': {
       'main': [
-        'less/boostrap.less',
-        'dist/css/boostrap.css',
-        'dist/js/boostrap.js'
+        'less/bootstrap.less',
+        'dist/css/bootstrap.css',
+        'dist/js/bootstrap.js'
       ]
     }
   }
@@ -45,13 +45,12 @@ gulp.task('htmlBuild', function(){
   browserSync.reload();
 });
 
-gulp.task('bower', ['bowerJS', 'bowerCSS']);
 
 gulp.task('bowerJS', function(){
   return gulp.src(lib.ext('js').files)
   .pipe(concat('vendor.min.js'))
   .pipe(uglify())
-  .pipe(gulp.dest('./build.js'));
+  .pipe(gulp.dest('./build/js'));
 });
 
 gulp.task('bowerCSS', function(){
@@ -59,6 +58,9 @@ gulp.task('bowerCSS', function(){
   .pipe(concat('vendor.css'))
   .pipe(gulp.dest('./build/css'));
 });
+
+gulp.task('bower', ['bowerJS', 'bowerCSS']);
+
 
 gulp.task('jshint', function(){
   return gulp.src(['js/*.js'])

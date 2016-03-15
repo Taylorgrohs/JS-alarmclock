@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="build/css/vendor.css">
+    <script src="build/js/vendor.min.js"></script>
+    <script type="text/javascript" src="build/js/app.js"></script>
+    <title>Alarm Clock</title>
+  </head>
+  <body>
+    <div class="jumbotron">
+      <div class="container page-moment-index">
+        <h1>Alarm Clock</h1>
+        <h2>Current Time:</h2>
+        <h2 id="currentTime"></h2>
+        <form class="set-alarm form-group">
+          <label for="set-alarm">Set alarm:</label>
+          <input type="time" id="set-alarm"/>
+          <button class="btn btn-success" type="submit">Set alarm</button>
+        </form>
+        <script src="moment.js"></script>
+<script>
+    moment().format('MMMM Do YYYY, h:mm:ss a');
+</script>
+      </div>
+    </div>
+  </body>
+</html>
